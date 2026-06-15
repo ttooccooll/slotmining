@@ -611,6 +611,10 @@ def run_pull(final_hash: str, block_info: dict, nonce: int, won: bool,
     time.sleep(0.25)
     draw_machine(block_info, final_hash, result_text, nonce, pulls, best_zeros, lever_down=True)
 
+    time.sleep(0.3)
+
+    draw_machine(block_info, final_hash, result_text, nonce, pulls, best_zeros, lever_down=False)
+
 
 def print_jackpot_screen(block_info: dict, nonce: int, display_hash: str):
     """Full-screen jackpot celebration."""

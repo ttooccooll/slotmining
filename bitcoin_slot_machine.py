@@ -402,12 +402,12 @@ def print_intro(required_zeros: int = 19):
    ║   ╚════██║██║     ██║   ██║   ██║                                     ║
    ║   ███████║███████╗╚██████╔╝   ██║                                     ║
    ║   ╚══════╝╚══════╝ ╚═════╝    ╚═╝                                     ║
-   ║        ███╗   ███╗██╗███╗   ██╗███████╗██████╗                         ║
-   ║        ████╗ ████║██║████╗  ██║██╔════╝██╔══██╗                        ║
-   ║        ██╔████╔██║██║██╔██╗ ██║█████╗  ██████╔╝                        ║
-   ║        ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ██╔══██╗                        ║
-   ║        ██║ ╚═╝ ██║██║██║ ╚████║███████╗██║  ██║                        ║
-   ║        ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝                        ║
+   ║        ███╗   ███╗██╗███╗   ██╗███████╗██████╗                        ║
+   ║        ████╗ ████║██║████╗  ██║██╔════╝██╔══██╗                       ║
+   ║        ██╔████╔██║██║██╔██╗ ██║█████╗  ██████╔╝                       ║
+   ║        ██║╚██╔╝██║██║██║╚██╗██║██╔══╝  ██╔══██╗                       ║
+   ║        ██║ ╚═╝ ██║██║██║ ╚████║███████╗██║  ██║                       ║
+   ║        ╚═╝     ╚═╝╚═╝╚═╝  ╚═══╝╚══════╝╚═╝  ╚═╝                       ║
    ║                                                                       ║
    ╠═══════════════════════════════════════════════════════════════════════╣
    ║  ONE PULL. ONE HASH. ONE SHOT AT THE NEXT BITCOIN BLOCK.              ║
@@ -421,7 +421,7 @@ def print_intro(required_zeros: int = 19):
    ║  5. Checks: does the hash beat the difficulty target?                 ║
    ║                                                                       ║
    ║  THE TARGET: Your hash must start with ~{z} hex zeros.                 ║
-   ║  Each zero is 1-in-16, so {z} zeros = 1 in 16^{z} = ~1 in 2^{b}.          ║
+   ║  Each zero is 1-in-16, so {z} zeros = 1 in 16^{z} = ~1 in 2^{b}.         ║
    ║  Real ASICs do 600 trillion hashes/sec. You get one per pull.         ║
    ║                                                                       ║
    ║  If you win: 3.125 BTC goes directly to YOUR address.                 ║
@@ -490,10 +490,10 @@ def draw_machine(block_info: dict, reels: str = None, result_text: str = None,
 
     out = []
     out.append(f"  ╔{'═' * (W + 2)}╗")
-    out.append(r(" ____  _     ___  _____   __  __ ___ _  _ ___ ___".center(W)))
-    out.append(r("/ ___|| |   / _ \\|_   _| |  \\/  |_ _| \\| | __| _ \\".center(W)))
-    out.append(r("\\___ \\| |__| (_) | | |   | |\\/| || || .` | _||   /".center(W)))
-    out.append(r("|___/ |____|\\___/  |_|   |_|  |_|___|_|\\_|___|_|_\\".center(W)))
+    out.append(r("           ____  _     ___  _____   __  __ ___ _  _ ___ ___           ".center(W)))
+    out.append(r(".+.*.+.*.+ / ___|| | * / _ \\|_   _| |  \\/  |_ _| \\| | __| _ \\ .*.+.*.+.*".center(W)))
+    out.append(r("+.*.+.*.+. \\___ \\| |__| (_) | | |   | |\\/| || || .` | _||   / *.+.*.+.*.".center(W)))
+    out.append(r(".+.*.+.*.+ |___/ |____|\\___/  |_| * |_|  |_|___|_|\\_|___|_|_\\ .*.+.*.+.*".center(W)))
     out.append(sep())
     out.append(r(f" BLOCK #{height:,}".ljust(36) + f"REWARD  3.125 BTC"))
     out.append(r(f" PAYS TO  {addr_display}"))
@@ -506,7 +506,7 @@ def draw_machine(block_info: dict, reels: str = None, result_text: str = None,
         # Idle state: show "PULL THE LEVER" prompt
         reel_lines.append(r())
         reel_lines.append(r("  ┌──────────────────────────────────────────────────────────────┐"))
-        reel_lines.append(r("  │         P U L L   T H E   L E V E R   [ENTER]               │"))
+        reel_lines.append(r("  │         P U L L   T H E   L E V E R   [ENTER]                │"))
         reel_lines.append(r("  └──────────────────────────────────────────────────────────────┘"))
         reel_lines.append(r())
         reel_lines.append(r(f"   One hash. {required_zeros} zeros to win. You feeling lucky?"))
@@ -624,12 +624,12 @@ def print_jackpot_screen(block_info: dict, nonce: int, display_hash: str):
     print(f"""
    ╔═══════════════════════════════════════════════════════════════════════╗
    ║                                                                       ║
-   ║        ██╗ █████╗  ██████╗██╗  ██╗██████╗  ██████╗ ████████╗         ║
-   ║        ██║██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔═══██╗╚══██╔══╝         ║
-   ║        ██║███████║██║     █████╔╝ ██████╔╝██║   ██║   ██║            ║
-   ║   ██   ██║██╔══██║██║     ██╔═██╗ ██╔═══╝ ██║   ██║   ██║            ║
-   ║   ╚█████╔╝██║  ██║╚██████╗██║  ██╗██║     ╚██████╔╝   ██║            ║
-   ║    ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝      ╚═════╝    ╚═╝            ║
+   ║        ██╗ █████╗  ██████╗██╗  ██╗██████╗  ██████╗ ████████╗          ║
+   ║        ██║██╔══██╗██╔════╝██║ ██╔╝██╔══██╗██╔═══██╗╚══██╔══╝          ║
+   ║        ██║███████║██║     █████╔╝ ██████╔╝██║   ██║   ██║             ║
+   ║   ██   ██║██╔══██║██║     ██╔═██╗ ██╔═══╝ ██║   ██║   ██║             ║
+   ║   ╚█████╔╝██║  ██║╚██████╗██║  ██╗██║     ╚██████╔╝   ██║             ║
+   ║    ╚════╝ ╚═╝  ╚═╝ ╚═════╝╚═╝  ╚═╝╚═╝      ╚═════╝    ╚═╝             ║
    ║                                                                       ║
    ╠═══════════════════════════════════════════════════════════════════════╣
    ║                                                                       ║
@@ -884,17 +884,17 @@ def main():
     print("   ┌────────────────────────────────────────────────────┐")
     print(f"   │  CASHING OUT                                       │")
     print(f"   │                                                    │")
-    print(f"   │  Total pulls:   {pulls:<34}│")
-    print(f"   │  Best zeros:    {best_zeros:<34}│")
-    print(f"   │  Zeros needed:  {required_zeros:<34}│")
-    print(f"   │  Odds per pull: {odds_str:<34}│")
+    print(f"   │  Total pulls:   {pulls:<34} │")
+    print(f"   │  Best zeros:    {best_zeros:<34} │")
+    print(f"   │  Zeros needed:  {required_zeros:<34} │")
+    print(f"   │  Odds per pull: {odds_str:<34} │")
     if pulls > 0:
         pct = (1 - (1 - 1/16**required_zeros)**pulls) * 100
         if pct < 0.0001:
             pct_str = f"{pct:.2e}%"
         else:
             pct_str = f"{pct:.6f}%"
-        print(f"   │  Win chance:    {pct_str:<34}│")
+        print(f"   │  Win chance:    {pct_str:<34} │")
     print(f"   │                                                    │")
     print(f"   │  The machine is still here. It never sleeps.       │")
     print("   └────────────────────────────────────────────────────┘")
